@@ -1,2 +1,2 @@
-web: gunicorn api.wsgi
+web: gunicorn summit2app.wsgi
 
