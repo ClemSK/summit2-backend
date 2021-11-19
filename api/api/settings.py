@@ -109,7 +109,7 @@ SECRET_KEY = 'django-insecure-!y%t++!46@ght6@ko-b#am1j!p)($ip89)@nh!#@^tqpv(1t$^
 
 CORS_ALLOWED_ORIGINS = [
     'http://localhost:3001',
-    'https://summit2api.herokuapp.com',
+    'https://summit2app.herokuapp.com',
     # 'http://localhost:8001',
 ]
 
@@ -180,7 +180,7 @@ LOGOUT_REDIRECT_URL = "dashboard"
 STATIC_URL = "/static/"
 
 # Location where django collect all static files
-STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
+STATIC_ROOT = os.path.join(BASE_DIR, "static")
 
 # Extra places for collectstatic to find static files.
 STATICFILES_DIRS = (os.path.join(BASE_DIR, "staticfile"),)
