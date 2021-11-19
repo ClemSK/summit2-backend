@@ -1,2 +1,2 @@
-web: gunicorn summit2db.wsgi
+web: gunicorn api.wsgi
 
