@@ -230,6 +230,11 @@ class UserExerciseLogListView (views.APIView):
             serialized_userlog.errors, status=status.HTTP_400_BAD_REQUEST
         )
 
+    def delete(self, request, id):
+        userlog = self.get_user_by_id(id)
+        userlog.delete()
+        return response.Response(status=status.HTTP_200_OK)
+
 # put request will be a blend of post and delete
 # take this example and modify it to reflect the userlog
 # commenting out to avoid errors, will come back to this

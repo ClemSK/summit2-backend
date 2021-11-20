@@ -25,6 +25,7 @@ urlpatterns = [
     path('login/', LoginPage.as_view()),
     path("exercise/", ExerciseListView.as_view()),
     path("userlog/", UserExerciseLogListView.as_view()),
+    path("userlog/<int:id>/", UserExerciseLogListView.as_view()),
     path("programme/", ProgrammeListView.as_view()),
     path("programme/<int:id>/", ProgrammeDetailView.as_view()),
 
