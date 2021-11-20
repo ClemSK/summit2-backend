@@ -94,15 +94,33 @@ class ProgrammeListView (views.APIView):
 
 class ProgrammeDetailView (views.APIView):
 
+    # def get_album_by_id(self, id):
+    #     try:
+    #         return Album.objects.get(id=id)
+    #     except Album.DoesNotExist:
+    #         raise exceptions.NotFound(detail="Album does not exist")
+
+    # def get(self, request, id):
+    #     album = self.get_album_by_id(id)
+    #     serialized_album = AlbumSerializer(album)
+    #     return response.Response(serialized_album.data, status=status.HTTP_200_OK)
+
     def get_programme_by_id(self, id):
         try:
             return Programme.objects.get(id=id)
         except Programme.DoesNotExist:
             raise exceptions.NotFound(detail="exercise does not exist")
 
+    def get(self, request, id):
+        programme = self.get_programme_by_id(id)
+        # serialized_programme = ProgrammeSerializer(Programme)
+        serialized_programme = ProgrammeSerializer(
+            programme, context={"request": request})
+        return response.Response(serialized_programme.data, status=status.HTTP_200_OK)
+
     def delete(self, request, id):
-        exercise = self.get_programme_by_id(id)
-        exercise.delete()
+        programme = self.get_programme_by_id(id)
+        programme.delete()
         return response.Response(status=status.HTTP_200_OK)
 
 
