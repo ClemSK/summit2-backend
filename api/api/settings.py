@@ -36,6 +36,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 DEBUG = True
 
 ALLOWED_HOSTS = [
+    'summit2app.herokuapp.com',
     'https://summit2app.herokuapp.com/',
     '0.0.0.0',
     'localhost',
