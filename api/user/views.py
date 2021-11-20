@@ -200,11 +200,6 @@ class userDetailView(views.APIView):
 
 
 class UserExerciseLogListView (views.APIView):
-    def get_user_by_id(self, id):
-        try:
-            return User.objects.get(id=id)
-        except User.DoesNotExist:
-            raise exceptions.NotFound(detail="user does not exist")
 
     def get_log_by_id(self, id):
         try:
@@ -233,7 +228,7 @@ class UserExerciseLogListView (views.APIView):
     def delete(self, request, id):
         userlog = self.get_user_by_id(id)
         userlog.delete()
-        return response.Response(status=status.HTTP_200_OK)
+        return response.Response(status=status.HTTP_204_NO_CONTENT)
 
 # put request will be a blend of post and delete
 # take this example and modify it to reflect the userlog
