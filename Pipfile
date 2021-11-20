@@ -14,6 +14,7 @@ whitenoise = "*"
 psycopg2 = "*"
 pyjwt = "*"
 django-environ = "*"
+django-heroku = "*"
 
 [dev-packages]
 
